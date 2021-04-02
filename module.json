@@ -1,0 +1,31 @@
+{
+	"name": "fancy-ui-5e",
+	"title": "Fancy UI 5e",
+	"description": "A polished UI for D&D 5e with party and character panels.",
+	"systems": ["dnd5e"],
+	"version": "1.0.0",
+	"author": "Miguel Molina (erizocosmico)",
+	"authors": [
+		{
+			"name": "Miguel Molina",
+			"url": "https://github.com/erizocosmico"
+		}
+	],
+	"esmodules": [
+		"./scripts/main.js"
+	],
+	"styles": [
+		"./styles/ui.css"
+	],
+	"minimumCoreVersion": "0.7.9",
+	"minimumSystemVersion": "1.2.0",
+	"compatibleCoreVersion": "0.7.9",
+	"bugs": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/issues",
+	"changelog": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases",
+	"download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/latest/download/module.zip",
+	"manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/latest/download/module.json",
+	"readme": "https://raw.githubusercontent.com/erizocosmico/foundryvtt-fancy-ui-5e/main/README.md",
+	"url": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e",
+	"allowBugReporter": true,
+	"manifestPlusVersion": "1.0.0"
+}

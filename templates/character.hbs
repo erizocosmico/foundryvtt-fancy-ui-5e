@@ -1,0 +1,111 @@
+<div class="character-stats">
+    <div class="character-stats-content">
+        <h4>Atributos</h4>
+        <div class="abilities">
+            {{#each abilities as |ab key|}}
+            <div class="ability" data-ability="{{key}}" data-character-id="{{@root/id}}">
+                <div class="ability-wrapper">
+                    <span class="name">{{abilityName key}}</span>
+                    <span class="mod">{{modifier ab.mod}}</span>
+                </div>
+                <span class="save">Salvación</span>
+            </div>
+            {{/each}}
+        </div>
+
+        <h4>Habilidades</h4>
+
+        <ul class="skills">
+            {{#each skills as |skill key|}}
+            <li class="skill" data-skill="{{key}}" data-character-id="{{@root/id}}">
+                <span class="name">{{skillName key}}</span>
+                <span class="mod">{{modifier skill.mod}}</span>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="character-info">
+    <div class="character-info-top">
+        <form class="character-attrs">
+            <div class="bar-wrapper">
+                <div class="attr">
+                    <label>Vel</label>
+                    <span>{{speed}} ft</span>
+                </div>
+
+                <div class="attr">
+                    <label>Ini</label>
+                    <span>{{modifier ini}}</span>
+                </div>
+
+                <div class="attr">
+                    <label>CA</label>
+                    <span>{{armor}}</span>
+                </div>
+            </div>
+        </form>
+
+        <div class="character-picture">
+            <img src="{{picture}}" alt="{{name}}" />
+
+            <div class="sheet" data-character="{{id}}">
+                Abrir ficha
+            </div>
+
+            <div class="character-level">
+                <div class="character-level-badge"></div>
+                <span>{{level}}</span>
+            </div>
+        </div>
+
+        <div class="character-health">
+            <div class="bar-wrapper">
+                <div class="bar {{hp.status}}" style="width: {{hp.percent}}%"></div>
+
+                <input type="text" id="current-health" data-value="{{hp.value}}" data-id="{{id}}"
+                    value="{{hp.value}}" />
+                <span class="divider">/</span>
+                <input type="text" value="{{hp.max}}" disabled />
+            </div>
+        </div>
+    </div>
+
+    <div class="character-buttons">
+        <button class="stats-toggle">Estadísticas</button>
+        <div class="divider"></div>
+        <button class="actions-toggle">Acciones</button>
+    </div>
+
+    <div class="character-details">
+        <div class="character-name">
+            {{name}}
+        </div>
+
+        <div class="character-race-class">
+            {{race}} {{class}}
+        </div>
+    </div>
+</div>
+
+<div class="character-actions">
+    <div class="character-actions-content">
+        {{#each actions as |actions kind|}}
+        {{#ifNotEmpty actions}}
+        <div class="actions-category">
+            <h4>{{actionTypeName kind}}</h4>
+
+            <div class="action-list">
+                {{#each actions as |a|}}
+                <div class="action item" data-item-id="{{a.id}}" data-character-id="{{@root/id}}">
+                    <img src="{{a.img}}" />
+                    <span>{{a.name}}</span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/ifNotEmpty}}
+        {{/each}}
+    </div>
+</div>

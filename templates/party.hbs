@@ -1,0 +1,26 @@
+{{#each characters as |c|}}
+<div class="party-character">
+    <div class="character-picture" data-character="{{c.id}}">
+        <img src="{{c.picture}}" alt="{{c.name}}" />
+    </div>
+
+    <div class="character-info">
+        <div class="character-info-wrapper">
+            <div class="character-details">
+                <div class="character-name">{{c.name}}</div>
+                <div class="character-class {{c.class}}"></div>
+            </div>
+            <div class="character-health">
+                <div class="bar-wrapper">
+                    <div class="bar {{hp.status}}" style="width: {{hp.percent}}%"></div>
+
+                    <input type="text" class="current-health" data-value="{{hp.value}}" data-id="{{id}}"
+                        value="{{hp.value}}" />
+                    <span class="divider">/</span>
+                    <input type="text" value="{{hp.max}}" disabled />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
