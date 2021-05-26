@@ -20,12 +20,26 @@ Hooks.on("renderApplication", async function () {
   }
 });
 
-Hooks.on("updateActor", async function (actor, _) {
+Hooks.on("updateActor", async function (actor) {
   if (!isGm() && actor.id === getCharacter()?.id) {
     await renderCharacter();
   }
 
   await renderParty();
+});
+
+Hooks.on("updateOwnedItem", async function (actor, _, diff) {
+  if (isGm() || actor.id !== getCharacter()?.id) {
+    return;
+  }
+
+  // Wait a little bit so the item is updated and can be rendered
+  // correctly in the actions list.
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  if (diff.flags && diff.flags["character-actions-list-5e"]) {
+    await renderCharacter();
+  }
 });
 
 Hooks.once("init", async () => {

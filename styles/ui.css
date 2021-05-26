@@ -58,6 +58,9 @@ textarea:focus {
 
 #navigation {
   display: none;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 /**
@@ -141,10 +144,11 @@ textarea:focus {
   );
 }
 
-.vtt.game button {
+#sidebar button,
+.dialog-buttons button {
   box-shadow: 0 0 0 1px var(--gold) inset, 0 0 0 3px black inset;
   border: 1px solid black !important;
-  background: black;
+  background: black !important;
   color: white;
   position: relative;
   border-radius: 0;
@@ -155,7 +159,8 @@ textarea:focus {
   height: 30px !important;
 }
 
-button::after {
+#sidebar button::after,
+.dialog-buttons button::after {
   position: absolute;
   content: " ";
   top: 0;
@@ -245,6 +250,10 @@ button::after {
 /**
  * Sheet dnd5e
  */
+
+.dnd5e.sheet .window-content {
+  background: white;
+}
 
 .dnd5e.sheet.actor.character.my-beyond .sheet-header img.profile {
   border-color: var(--gold);
@@ -433,12 +442,19 @@ button::after {
   display: none;
 }
 
+.dnd5e.sheet.actor.character.my-beyond .tab .items-list .items-header h3,
+.dnd5e.sheet.actor.character.my-beyond .tab .items-list .items-header div {
+  width: auto !important;
+}
+
 /*
  * Hotbar and controls
  */
 
 #hotbar {
   display: none;
+  width: 0;
+  height: 0;
 }
 
 #players.hidden {
@@ -477,7 +493,6 @@ button::after {
 
 #pause {
   bottom: calc(50% - 50px);
-  display: none !important;
 }
 
 #controls:hover .scene-control:not(.active),
@@ -487,6 +502,12 @@ button::after {
 
 #logo {
   display: none;
+  height: 0;
+  display: 0;
+}
+
+#combat #combat-round .encounters h3 {
+  font-size: 14px;
 }
 
 /**
@@ -517,6 +538,11 @@ button::after {
  * Plutonium
  */
 
+.monsterblock .window-content,
+.ve-window {
+  background: white !important;
+}
+
 .ui-modal__inner {
   background: white;
 }
@@ -543,7 +569,7 @@ label.btn--active:hover {
  */
 
 #player-character {
-  left: calc(50% - 239px);
+  left: calc(50% - 290px);
   position: absolute;
   bottom: 0;
   display: flex;
@@ -989,6 +1015,7 @@ label.btn--active:hover {
 
 #player-character .character-buttons button {
   border-radius: 5px;
+  color: white;
   background: rgba(0, 0, 0, 0.5) !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   font-weight: bold;
@@ -1114,4 +1141,9 @@ label.btn--active:hover {
   padding-top: 2px;
   z-index: 3;
   text-shadow: 0 0 5px var(--text-shadow);
+}
+
+#party,
+#player-character {
+  z-index: 16;
 }
