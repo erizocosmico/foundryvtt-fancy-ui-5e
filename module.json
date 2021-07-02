@@ -5,7 +5,7 @@
 	"systems": [
 		"dnd5e"
 	],
-	"version": "Auto replaced",
+	"version": "1.0.4",
 	"author": "Miguel Molina (erizocosmico)",
 	"authors": [
 		{
@@ -34,15 +34,27 @@
 			"name": "mybeyond-theme"
 		}
 	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json"
+		},
+		{
+			"lang": "es",
+			"name": "Español",
+			"path": "languages/es.json"
+		}
+	],
 	"minimumCoreVersion": "0.7.9",
 	"minimumSystemVersion": "1.2.0",
-	"compatibleCoreVersion": "0.7.10",
+	"compatibleCoreVersion": "0.8.8",
 	"bugs": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/issues",
 	"changelog": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases",
-	"download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/latest/download/module.zip",
-	"manifest": "Auto replaced",
-	"readme": "Auto replaced",
-	"url": "Auto replaced",
+	"download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/v1.0.4/download/module.zip",
+	"manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/v1.0.4/download/module.json",
+	"readme": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/blob/main/README.md",
+	"url": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e",
 	"allowBugReporter": true,
 	"manifestPlusVersion": "1.0.0"
 }

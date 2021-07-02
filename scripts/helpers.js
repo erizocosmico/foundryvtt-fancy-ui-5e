@@ -8,16 +8,16 @@ Handlebars.registerHelper("ifNotEmpty", (input, block) => {
 });
 
 const actionTypeNames = {
-  action: "Acciones",
-  bonus: "Acciones adicionales",
-  reaction: "Reacciones",
-  crew: "Acciones de tripulación",
+  action: "actions",
+  bonus: "bonus_actions",
+  reaction: "reactions",
+  crew: "crew_actions",
 };
 
-Handlebars.registerHelper(
-  "actionTypeName",
-  (type) => actionTypeNames[type] || "Otras acciones"
-);
+Handlebars.registerHelper("actionTypeName", (type) => {
+  const key = actionTypeNames[type] || "other_actions";
+  return game.i18n.localize(`FANCYUI5E.${key}`);
+});
 
 Handlebars.registerHelper("modifier", (x) => (x < 0 ? x : `+${x}`));
 
