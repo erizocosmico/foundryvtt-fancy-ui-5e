@@ -61,6 +61,8 @@ textarea:focus {
   width: 0;
   height: 0;
   overflow: hidden;
+  visibility: hidden;
+  opacity: 0;;
 }
 
 /**
@@ -455,10 +457,18 @@ textarea:focus {
   display: none;
   width: 0;
   height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
 }
 
 #players.hidden {
   display: none !important;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
 }
 
 #players {
