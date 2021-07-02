@@ -5,7 +5,7 @@
 	"systems": [
 		"dnd5e"
 	],
-	"version": "1.0.0",
+	"version": "Auto replaced",
 	"author": "Miguel Molina (erizocosmico)",
 	"authors": [
 		{
@@ -19,15 +19,30 @@
 	"styles": [
 		"./styles/ui.css"
 	],
+	"dependencies": [
+		{
+			"name": "betterrolls5e"
+		},
+		{
+			"name": "dnd5e",
+			"type": "system"
+		},
+		{
+			"name": "character-actions-list-5e"
+		},
+		{
+			"name": "mybeyond-theme"
+		}
+	],
 	"minimumCoreVersion": "0.7.9",
 	"minimumSystemVersion": "1.2.0",
 	"compatibleCoreVersion": "0.7.10",
 	"bugs": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/issues",
 	"changelog": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases",
 	"download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/latest/download/module.zip",
-	"manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/latest/download/module.json",
-	"readme": "https://raw.githubusercontent.com/erizocosmico/foundryvtt-fancy-ui-5e/main/README.md",
-	"url": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e",
+	"manifest": "Auto replaced",
+	"readme": "Auto replaced",
+	"url": "Auto replaced",
 	"allowBugReporter": true,
 	"manifestPlusVersion": "1.0.0"
 }

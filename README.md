@@ -6,6 +6,12 @@ This module adds a new fancier UI for D&D 5e system in FoundryVTT.
 
 _Background image by [Thomas Bourdon](https://thomasbourdon.artstation.com/) for Exploring Eberron by Keith Baker._
 
+### Install
+
+```
+https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/latest/download/module.json
+```
+
 ### Features
 
 - Character panel so the player can manage their character without opening the character sheet.
@@ -24,14 +30,8 @@ This set of features is meant to remove the things that take space in the screen
 
 - [BetterRolls5e](https://github.com/RedReign/FoundryVTT-BetterRolls5e/tree/master/betterrolls5e)
 - [character-actions-list-5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions)
-
-### Nice to have
-
-The module has styles to change the UI of the following character sheet.
-
 - [mybeyond-theme](https://fvtt-modules.eschmann.online/)
-
-If it's not present, the styles will just not be applied.
+- dnd5e system.
 
 ### TODO
 
