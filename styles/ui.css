@@ -287,12 +287,22 @@ textarea:focus {
   color: black;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.skills-list
-  li.skill:first-child
-  .skill-proficiency::before {
-  left: 8px;
-  content: "Comp";
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-proficiency::before {
+  left: 125px !important;
+  content: "Comp" !important;
+}
+
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-ability::before {
+  left: 160px !important;
+}
+
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill .skill-name,
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill .skill-mod {
+  border: none !important;
+}
+
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill {
+  border-bottom: 1px solid #d8d8d8 !important;
 }
 
 .dnd5e.sheet.actor.character.my-beyond
@@ -306,16 +316,21 @@ textarea:focus {
   ul.skills-list
   li.skill:first-child
   .skill-name::before {
-  left: 80px;
-  content: "Habilidad";
+  left: 0px !important;
+  top: -20px !important;
+  content: "Habilidad" !important;
 }
 
 .dnd5e.sheet.actor.character.my-beyond
   ul.skills-list
   li.skill:first-child
   .skill-mod::before {
-  right: 9px;
-  content: "Bono";
+  right: 195px;
+  content: "Bono" !important;
+}
+
+.dnd5e.sheet.actor.character.my-beyond .attribute.armor .attribute-footer .spell-dc {
+  display: none !important;
 }
 
 .dnd5e.sheet.actor.character.my-beyond
