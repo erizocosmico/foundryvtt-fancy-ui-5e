@@ -494,35 +494,38 @@ textarea:focus {
   opacity: 1;
 }
 
+
 #controls {
   opacity: 0.5;
-  top: 10px;
+  flex: 0;
+  height: auto;
+  pointer-events: all !important;
 }
 
 #controls:hover {
   opacity: 1;
 }
 
-#controls .scene-control:hover,
-#controls .scene-control.active,
-#controls .control-tool:hover,
-#controls .control-tool.active {
+#controls ol .scene-control:hover,
+#controls ol .scene-control.active,
+#controls ol .control-tool:hover,
+#controls ol .control-tool.active {
   border: 1px solid var(--gold);
   box-shadow: 0 0 10px var(--gold-toasted);
 }
 
-#controls .scene-control:not(.active),
-#controls .scene-control.active .control-tools {
-  display: none;
+#controls ol .scene-control:not(.active),
+#controls ol .control-tool {
+  display: none !important;
+}
+
+#controls:hover ol.main-controls .scene-control:not(.active),
+#controls:hover ol.sub-controls .control-tool {
+  display: inline-block !important;
 }
 
 #pause {
   bottom: calc(50% - 50px);
-}
-
-#controls:hover .scene-control:not(.active),
-#controls:hover .scene-control.active .control-tools {
-  display: initial;
 }
 
 #logo {
@@ -1171,4 +1174,8 @@ label.btn--active:hover {
 #party,
 #player-character {
   z-index: 16;
+}
+
+#sidebar-tabs a[data-tab="cards"] {
+  display: none;
 }
