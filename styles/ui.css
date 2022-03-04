@@ -75,7 +75,7 @@ textarea:focus {
   padding-left: 50px;
   top: 0;
   right: 0;
-  margin-top: 0;
+  margin: 0 !important;
   border-radius: 0;
   min-width: 350px;
   box-shadow: none;
@@ -253,6 +253,24 @@ textarea:focus {
  * Sheet dnd5e
  */
 
+.dnd5e.sheet.actor.character.my-beyond {
+  min-height: 0 !important;
+}
+
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list::after {
+  position: static !important;
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.vtt .dnd5e.sheet.actor.character.my-beyond ul.skills-list {
+  height: auto !important;
+  overflow-y: auto;
+  bottom: 0px;
+  padding-bottom: 10px !important;
+}
+
 .dnd5e.sheet .window-content {
   background: white;
 }
@@ -278,10 +296,6 @@ textarea:focus {
 /**
  * Attributes panel of the dnd5e sheet
  */
-
-.dnd5e.sheet.actor.character.my-beyond ul.skills-list {
-  padding: 30px 10px 40px !important;
-}
 
 .dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill .skill-ability {
   color: black;
@@ -497,7 +511,9 @@ textarea:focus {
 
 #controls {
   opacity: 0.5;
-  flex: 0;
+  flex-grow: 0 !important;
+  flex-shrink: 1 !important;
+  flex-basis: auto !important;
   height: auto;
   pointer-events: all !important;
 }
@@ -506,15 +522,15 @@ textarea:focus {
   opacity: 1;
 }
 
-#controls ol .scene-control:hover,
-#controls ol .scene-control.active,
-#controls ol .control-tool:hover,
-#controls ol .control-tool.active {
+#controls ol.control-tools > li.scene-control:hover,
+#controls ol.control-tools > li.scene-control.active,
+#controls ol.control-tools > li.control-tool:hover,
+#controls ol.control-tools > li.control-tool.active {
   border: 1px solid var(--gold);
   box-shadow: 0 0 10px var(--gold-toasted);
 }
 
-#controls ol .scene-control:not(.active),
+#controls ol.control-tools > li.scene-control:not(.active),
 #controls ol .control-tool {
   display: none !important;
 }
