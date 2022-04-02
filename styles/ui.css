@@ -4,11 +4,9 @@ html {
   --gold: #cfc389;
   --gold-dark: #9c9452;
   --gold-toasted: #8a6c3c;
-  --gold-gradient: linear-gradient(
-    180deg,
-    var(--gold) 0%,
-    var(--gold-toasted) 100%
-  );
+  --gold-gradient: linear-gradient(180deg,
+      var(--gold) 0%,
+      var(--gold-toasted) 100%);
   --text-shadow: rgba(0, 0, 0, 0.9);
 }
 
@@ -62,7 +60,8 @@ textarea:focus {
   height: 0;
   overflow: hidden;
   visibility: hidden;
-  opacity: 0;;
+  opacity: 0;
+  ;
 }
 
 /**
@@ -80,12 +79,10 @@ textarea:focus {
   min-width: 350px;
   box-shadow: none;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    270deg,
-    rgba(0, 0, 0, 0.8191877092633928) 0%,
-    rgba(0, 0, 0, 0.737955216266194) 80%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(270deg,
+      rgba(0, 0, 0, 0.8191877092633928) 0%,
+      rgba(0, 0, 0, 0.737955216266194) 80%,
+      rgba(0, 0, 0, 0) 100%);
 }
 
 #sidebar #sidebar-tabs {
@@ -112,7 +109,7 @@ textarea:focus {
   padding-top: 0.5em;
 }
 
-#sidebar-tabs > .item {
+#sidebar-tabs>.item {
   display: flex;
   height: 30px;
   min-width: 30px;
@@ -120,7 +117,7 @@ textarea:focus {
   justify-content: center;
 }
 
-#sidebar-tabs > .item.active {
+#sidebar-tabs>.item.active {
   box-shadow: none;
   text-shadow: none;
   background: transparent;
@@ -129,7 +126,7 @@ textarea:focus {
   border-radius: 50%;
 }
 
-#sidebar-tabs > .item.active::after {
+#sidebar-tabs>.item.active::after {
   position: absolute;
   content: " ";
   top: 0;
@@ -137,13 +134,11 @@ textarea:focus {
   right: 0;
   bottom: 0;
   border-radius: 50%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.1) 50%,
-    rgba(0, 0, 0, 0.3) 85%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.3) 85%,
+      rgba(0, 0, 0, 0.45) 100%);
 }
 
 #sidebar button,
@@ -169,13 +164,11 @@ textarea:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.1) 50%,
-    rgba(0, 0, 0, 0.3) 85%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.3) 85%,
+      rgba(0, 0, 0, 0.45) 100%);
 }
 
 #sidebar-tabs {
@@ -218,7 +211,7 @@ textarea:focus {
   margin: 3px 3px 12px 3px;
 }
 
-#sidebar #chat .message + .message {
+#sidebar #chat .message+.message {
   margin-top: 5px;
 }
 
@@ -245,7 +238,7 @@ textarea:focus {
   margin-top: 5px;
 }
 
-.red-dual .dice-row .dice-row-item + .dice-row-item {
+.red-dual .dice-row .dice-row-item+.dice-row-item {
   margin-left: 5px;
 }
 
@@ -281,11 +274,7 @@ textarea:focus {
   object-fit: cover;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  .sheet-header
-  .header-details
-  .charname
-  input {
+.dnd5e.sheet.actor.character.my-beyond .sheet-header .header-details .charname input {
   font-family: "Modesto Condensed";
 }
 
@@ -319,26 +308,17 @@ textarea:focus {
   border-bottom: 1px solid #d8d8d8 !important;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.skills-list
-  li.skill:first-child
-  .skill-ability::before {
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-ability::before {
   left: 42px;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.skills-list
-  li.skill:first-child
-  .skill-name::before {
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-name::before {
   left: 0px !important;
   top: -20px !important;
   content: "Habilidad" !important;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.skills-list
-  li.skill:first-child
-  .skill-mod::before {
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-mod::before {
   right: 195px;
   content: "Bono" !important;
 }
@@ -347,31 +327,14 @@ textarea:focus {
   display: none !important;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.skills-list
-  li.skill:first-child
-  .skill-proficiency::before,
-.dnd5e.sheet.actor.character.my-beyond
-  ul.skills-list
-  li.skill:first-child
-  .skill-ability::before,
-.dnd5e.sheet.actor.character.my-beyond
-  ul.skills-list
-  li.skill:first-child
-  .skill-name::before,
-.dnd5e.sheet.actor.character.my-beyond
-  ul.skills-list
-  li.skill:first-child
-  .skill-mod::before {
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-proficiency::before,
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-ability::before,
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-name::before,
+.dnd5e.sheet.actor.character.my-beyond ul.skills-list li.skill:first-child .skill-mod::before {
   top: 12px;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  .tab.attributes
-  .center-pane
-  .traits
-  .form-group
-  label {
+.dnd5e.sheet.actor.character.my-beyond .tab.attributes .center-pane .traits .form-group label {
   color: black;
 }
 
@@ -385,10 +348,7 @@ textarea:focus {
   box-shadow: 0 0 0 1px var(--gold-dark) inset;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  .tab
-  .filter-list
-  .filter-item.active:hover {
+.dnd5e.sheet.actor.character.my-beyond .tab .filter-list .filter-item.active:hover {
   background-color: var(--gold-dark);
 }
 
@@ -396,30 +356,15 @@ textarea:focus {
   padding: 5px 7px 3px 7px;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  .sheet-header
-  ul.attributes
-  li.attribute:nth-child(2)
-  .attribute-footer
-  a {
+.dnd5e.sheet.actor.character.my-beyond .sheet-header ul.attributes li.attribute:nth-child(2) .attribute-footer a {
   border-color: var(--gold);
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  .sheet-header
-  ul.attributes
-  li.attribute:nth-child(2)
-  .attribute-footer
-  a.short-rest::before {
+.dnd5e.sheet.actor.character.my-beyond .sheet-header ul.attributes li.attribute:nth-child(2) .attribute-footer a.short-rest::before {
   background: no-repeat url(../images/icons/shortrest.svg);
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  .sheet-header
-  ul.attributes
-  li.attribute:nth-child(2)
-  .attribute-footer
-  a.long-rest::before {
+.dnd5e.sheet.actor.character.my-beyond .sheet-header ul.attributes li.attribute:nth-child(2) .attribute-footer a.long-rest::before {
   background: no-repeat url(../images/icons/longrest.svg);
 }
 
@@ -427,45 +372,27 @@ textarea:focus {
   border-bottom-color: transparent !important;
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  .sheet-header
-  ul.attributes
-  li.attribute:nth-child(2)
-  .attribute-footer
-  a.short-rest::after {
+.dnd5e.sheet.actor.character.my-beyond .sheet-header ul.attributes li.attribute:nth-child(2) .attribute-footer a.short-rest::after {
   content: "Desc. Corto";
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  .sheet-header
-  ul.attributes
-  li.attribute:nth-child(2)
-  .attribute-footer
-  a.long-rest::after {
+.dnd5e.sheet.actor.character.my-beyond .sheet-header ul.attributes li.attribute:nth-child(2) .attribute-footer a.long-rest::after {
   content: "Desc. Largo";
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.ability-scores
-  li.ability[data-ability="str"]::before {
+.dnd5e.sheet.actor.character.my-beyond ul.ability-scores li.ability[data-ability="str"]::before {
   content: "Fue";
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.ability-scores
-  li.ability[data-ability="dex"]::before {
+.dnd5e.sheet.actor.character.my-beyond ul.ability-scores li.ability[data-ability="dex"]::before {
   content: "Des";
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.ability-scores
-  li.ability[data-ability="wis"]::before {
+.dnd5e.sheet.actor.character.my-beyond ul.ability-scores li.ability[data-ability="wis"]::before {
   content: "Sab";
 }
 
-.dnd5e.sheet.actor.character.my-beyond
-  ul.ability-scores
-  li.ability[data-ability="cha"]::before {
+.dnd5e.sheet.actor.character.my-beyond ul.ability-scores li.ability[data-ability="cha"]::before {
   content: "Car";
 }
 
@@ -522,15 +449,15 @@ textarea:focus {
   opacity: 1;
 }
 
-#controls ol.control-tools > li.scene-control:hover,
-#controls ol.control-tools > li.scene-control.active,
-#controls ol.control-tools > li.control-tool:hover,
-#controls ol.control-tools > li.control-tool.active {
+#controls ol.control-tools>li.scene-control:hover,
+#controls ol.control-tools>li.scene-control.active,
+#controls ol.control-tools>li.control-tool:hover,
+#controls ol.control-tools>li.control-tool.active {
   border: 1px solid var(--gold);
   box-shadow: 0 0 10px var(--gold-toasted);
 }
 
-#controls ol.control-tools > li.scene-control:not(.active),
+#controls ol.control-tools>li.scene-control:not(.active),
 #controls ol .control-tool {
   display: none !important;
 }
@@ -545,7 +472,7 @@ textarea:focus {
 }
 
 #logo {
-  display: none;
+  display: none !important;
   height: 0;
   display: 0;
 }
@@ -593,8 +520,8 @@ textarea:focus {
 
 .stripe-odd:nth-child(odd),
 .stripe-even:nth-child(even),
-.stripe-odd-table > tbody > tr:nth-child(odd),
-.stripe-even-table > tbody > tr:nth-child(even) {
+.stripe-odd-table>tbody>tr:nth-child(odd),
+.stripe-even-table>tbody>tr:nth-child(even) {
   background: rgba(0, 0, 0, 0.05) !important;
 }
 
@@ -740,6 +667,7 @@ label.btn--active:hover {
 #player-character .character-health {
   margin-left: -25px;
 }
+
 #player-character .character-attrs {
   margin-right: -25px;
 }
@@ -772,38 +700,30 @@ label.btn--active:hover {
 
 #player-character .character-health .bar.healthy,
 #party .character-health .bar.healthy {
-  background: linear-gradient(
-    180deg,
-    rgb(50, 197, 124) 0%,
-    rgb(39, 160, 120) 100%
-  );
+  background: linear-gradient(180deg,
+      rgb(50, 197, 124) 0%,
+      rgb(39, 160, 120) 100%);
 }
 
 #player-character .character-health .bar.hurt,
 #party .character-health .bar.hurt {
-  background: linear-gradient(
-    180deg,
-    rgb(243, 227, 9) 0%,
-    rgb(202, 173, 8) 100%
-  );
+  background: linear-gradient(180deg,
+      rgb(243, 227, 9) 0%,
+      rgb(202, 173, 8) 100%);
 }
 
 #player-character .character-health .bar.injured,
 #party .character-health .bar.injured {
-  background: linear-gradient(
-    180deg,
-    rgb(235, 151, 25) 0%,
-    rgb(180, 106, 8) 100%
-  );
+  background: linear-gradient(180deg,
+      rgb(235, 151, 25) 0%,
+      rgb(180, 106, 8) 100%);
 }
 
 #player-character .character-health .bar.critical,
 #party .character-health .bar.critical {
-  background: linear-gradient(
-    180deg,
-    rgb(243, 87, 60) 0%,
-    rgb(141, 21, 5) 100%
-  );
+  background: linear-gradient(180deg,
+      rgb(243, 87, 60) 0%,
+      rgb(141, 21, 5) 100%);
 }
 
 #player-character .character-health input {
@@ -933,7 +853,7 @@ label.btn--active:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-#player-character .action + .action {
+#player-character .action+.action {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -1041,7 +961,7 @@ label.btn--active:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-#player-character .skill + .skill {
+#player-character .skill+.skill {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
