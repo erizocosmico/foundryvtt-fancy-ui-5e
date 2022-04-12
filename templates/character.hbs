@@ -19,7 +19,7 @@
             {{#each skills as |skill key|}}
             <li class="skill" data-skill="{{key}}" data-character-id="{{@root/id}}">
                 <span class="name">{{skillName key}}</span>
-                <span class="mod">{{modifier skill.mod}}</span>
+                <span class="mod">{{modifier skill.total}}</span>
             </li>
             {{/each}}
         </ul>

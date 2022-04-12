@@ -13,10 +13,13 @@ export function getCharacter() {
 }
 
 export function getPartyCharacters() {
+  const showOnlyActive = game.settings.get("fancy-ui-5e", "party-only-active");
   const characters = [];
   for (let user of game.users.values()) {
     if (user.character && user.character.data) {
-      characters.push(user.character);
+      if (!showOnlyActive || user.active) {
+        characters.push(user.character);
+      }
     }
   }
   return characters;

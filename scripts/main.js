@@ -55,6 +55,17 @@ Hooks.once("init", async () => {
   activatePartyListeners();
 });
 
+Hooks.once('ready', () => {
+  game.settings.register("fancy-ui-5e", "party-only-active", {
+    name: game.i18n.localize("FANCYUI5E.config_party_only_active"),
+    hint: game.i18n.localize("FANCYUI5E.config_party_only_active_help"),
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
+});
+
 function activatePlayerListeners() {
   $(document).on("click", "#player-character .sheet", actions.openSheet);
   setupHealthPointsTracker("#current-health");

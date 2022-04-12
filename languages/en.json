@@ -11,5 +11,7 @@
 	"FANCYUI5E.bonus_actions": "Bonus actions",
 	"FANCYUI5E.reactions": "Reactions",
 	"FANCYUI5E.crew_actions": "Crew actions",
-	"FANCYUI5E.other_actions": "Other actions"
+	"FANCYUI5E.other_actions": "Other actions",
+	"FANCYUI5E.config_party_only_active": "Show only active characters",
+	"FANCYUI5E.config_party_only_active_help": "Show only characters of online players in the left panel"
 }
