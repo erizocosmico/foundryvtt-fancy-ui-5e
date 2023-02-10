@@ -3,7 +3,7 @@
 	"title": "Fancy UI 5e",
 	"description": "A polished UI for D&D 5e with party and character panels.",
 	"system": "dnd5e",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"author": "Miguel Molina (erizocosmico)",
 	"authors": [
 		{
@@ -18,9 +18,6 @@
 		"./styles/ui.css"
 	],
 	"dependencies": [
-		{
-			"name": "betterrolls5e"
-		},
 		{
 			"name": "dnd5e",
 			"type": "system"
@@ -43,11 +40,11 @@
 	],
 	"minimumCoreVersion": "9",
 	"minimumSystemVersion": "1.2.0",
-	"compatibleCoreVersion": "9.0",
+	"compatibleCoreVersion": "10.0",
 	"bugs": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/issues",
 	"changelog": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases",
-	"download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.1.1/module.zip",
-	"manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.1.1/module.json",
+	"download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.2.0/module.zip",
+	"manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.2.0/module.json",
 	"readme": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/blob/main/README.md",
 	"url": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e",
 	"allowBugReporter": true,

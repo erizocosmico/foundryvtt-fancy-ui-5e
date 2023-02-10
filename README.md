@@ -9,7 +9,7 @@ _Background image by [Thomas Bourdon](https://thomasbourdon.artstation.com/) for
 ### Install
 
 ```
-https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.1.1/module.json
+https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.2.0/module.json
 ```
 
 ### Features
@@ -28,7 +28,8 @@ This set of features is meant to remove the things that take space in the screen
 
 ### Requirements
 
-- [BetterRolls5e](https://github.com/RedReign/FoundryVTT-BetterRolls5e/tree/master/betterrolls5e)
+- [BetterRolls5e](https://github.com/RedReign/FoundryVTT-BetterRolls5e) (for v9)
+- [ReadySetRoll](https://github.com/MangoFVTT/fvtt-ready-set-roll-5e) (for v10)
 - [character-actions-list-5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions)
 - [mybeyond-theme](https://fvtt-modules.eschmann.online/)
 - dnd5e system.
