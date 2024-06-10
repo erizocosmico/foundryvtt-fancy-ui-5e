@@ -9,7 +9,7 @@ _Background image by [Thomas Bourdon](https://thomasbourdon.artstation.com/) for
 ### Install
 
 ```
-https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.3.0/module.json
+https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.4.0/module.json
 ```
 
 ### Features

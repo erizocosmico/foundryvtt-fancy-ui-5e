@@ -68,20 +68,36 @@ textarea:focus {
 #sidebar {
   border: none;
   height: 100%;
-  padding-left: 50px;
   top: 0;
   right: 0;
   margin: 0 !important;
   border-radius: 0;
-  min-width: 350px;
-  box-shadow: none;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    270deg,
-    rgba(0, 0, 0, 0.8191877092633928) 0%,
-    rgba(0, 0, 0, 0.737955216266194) 80%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  min-width: 340px;
+  box-shadow: 0 -50px 50px rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.7);
+  border-left: 1px solid var(--gold-dark);
+  outline: 1px solid black;
+}
+
+#sidebar #sidebar-tabs {
+  padding-left: 5px;
+  border-bottom: 1px solid black;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  box-shadow: 0 1px 0 black, 0 -1px 0 var(--gold-dark) inset;
+}
+
+#sidebar #chat-log {
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+#sidebar > section {
+  padding-left: 5px;
+}
+
+section.chat-sidebar .jump-to-bottom > a {
+  width: 335px;
 }
 
 #sidebar #sidebar-tabs {
@@ -945,8 +961,4 @@ label.btn--active:hover {
 #party,
 #player-character {
   z-index: 16;
-}
-
-#sidebar-tabs a[data-tab='cards'] {
-  display: none;
 }
