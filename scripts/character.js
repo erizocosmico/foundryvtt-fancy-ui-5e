@@ -13,10 +13,10 @@ export function getCharacter() {
 }
 
 export function getPartyCharacters() {
-  const showOnlyActive = game.settings.get("fancy-ui-5e", "party-only-active");
+  const showOnlyActive = game.settings.get('fancy-ui-5e', 'party-only-active');
   const characters = [];
   for (let user of game.users.values()) {
-    if (user.character && user.character.data) {
+    if (user.character && user.character.system) {
       if (!showOnlyActive || user.active) {
         characters.push(user.character);
       }
@@ -26,10 +26,10 @@ export function getPartyCharacters() {
 }
 
 export function characterData(c) {
-  const { attributes, details, abilities, skills } = c.data.data;
+  const { attributes, details, abilities, skills } = c.system;
   const items = Array.from(c.items.values());
 
-  const characterClass = items.find((i) => i.type === "class");
+  const characterClass = items.find((i) => i.type === 'class');
   let hpPercent = (attributes.hp.value / attributes.hp.max) * 100;
   if (hpPercent >= 99) {
     hpPercent = 99;
@@ -43,7 +43,7 @@ export function characterData(c) {
     name: c.name,
     level: details.level,
     race: details.race,
-    class: characterClass?.name || "",
+    class: characterClass?.name || '',
     armor: isNaN(ac) ? 10 : ac,
     picture: c.img,
     hp: {
@@ -62,29 +62,24 @@ export function characterData(c) {
 
 function getActivationType(activationType) {
   switch (activationType) {
-    case "action":
-    case "bonus":
-    case "crew":
-    case "reaction":
+    case 'action':
+    case 'bonus':
+    case 'crew':
+    case 'reaction':
       return activationType;
     default:
-      return "other";
+      return 'other';
   }
 }
 
 function getActions(items) {
-  const { isItemInActionList } = game.modules.get(
-    "character-actions-list-5e"
-  ).api;
-
   return items.filter(isItemInActionList).reduce(
     (acc, item) => {
+      console.log(item);
       var _a;
       try {
         const activationType = getActivationType(
-          (_a = item.data.data.activation) === null || _a === void 0
-            ? void 0
-            : _a.type
+          (_a = item.system.activation) === null || _a === void 0 ? void 0 : _a.type,
         );
         acc[activationType].add(item);
         return acc;
@@ -98,22 +93,74 @@ function getActions(items) {
       crew: new Set(),
       reaction: new Set(),
       other: new Set(),
-    }
+    },
   );
+}
+
+function isItemInActionList(item) {
+  // check the old flags
+  const isFavourite = item.flags?.favtab?.isFavourite; // favourite items tab
+  const isFavorite = item.flags?.favtab?.isFavorite; // tidy 5e sheet
+
+  if (isFavourite || isFavorite) {
+    return true;
+  }
+
+  // perform normal filtering logic
+  switch (item.type) {
+    case 'weapon': {
+      return item.system.equipped;
+    }
+    case 'equipment': {
+      return item.system.equipped && isActiveItem(item.system.activation?.type);
+    }
+    case 'spell': {
+      // only exclude spells which need to be prepared but aren't
+      const notPrepared =
+        item.system.preparation?.mode === 'prepared' && !item.system.preparation?.prepared;
+      const isCantrip = item.system.level === 0;
+      if (!isCantrip && (limitToCantrips || notPrepared)) {
+        return false;
+      }
+      const isReaction = item.system.activation?.type === 'reaction';
+      const isBonusAction = item.system.activation?.type === 'bonus';
+
+      // ASSUMPTION: If the spell causes damage, it will have damageParts
+      const isDamageDealer = item.system.damage?.parts?.length > 0;
+      let shouldInclude = isReaction || isBonusAction || isDamageDealer;
+      return shouldInclude;
+    }
+    case 'feat': {
+      return !!item.system.activation?.type;
+    }
+    default: {
+      return false;
+    }
+  }
+}
+
+function isActiveItem(activationType) {
+  if (!activationType) {
+    return false;
+  }
+  if (['minute', 'hour', 'day', 'none'].includes(activationType)) {
+    return false;
+  }
+  return true;
 }
 
 function hpStatus(percent) {
   if (percent <= 25) {
-    return "critical";
+    return 'critical';
   }
 
   if (percent <= 50) {
-    return "injured";
+    return 'injured';
   }
 
   if (percent <= 75) {
-    return "hurt";
+    return 'hurt';
   }
 
-  return "healthy";
+  return 'healthy';
 }

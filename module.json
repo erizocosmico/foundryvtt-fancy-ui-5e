@@ -1,52 +1,52 @@
 {
-	"name": "fancy-ui-5e",
-	"title": "Fancy UI 5e",
-	"description": "A polished UI for D&D 5e with party and character panels.",
-	"system": "dnd5e",
-	"version": "1.2.0",
-	"author": "Miguel Molina (erizocosmico)",
-	"authors": [
-		{
-			"name": "Miguel Molina",
-			"url": "https://github.com/erizocosmico"
-		}
-	],
-	"esmodules": [
-		"./scripts/main.js"
-	],
-	"styles": [
-		"./styles/ui.css"
-	],
-	"dependencies": [
-		{
-			"name": "dnd5e",
-			"type": "system"
-		},
-		{
-			"name": "character-actions-list-5e"
-		}
-	],
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "languages/en.json"
-		},
-		{
-			"lang": "es",
-			"name": "Español",
-			"path": "languages/es.json"
-		}
-	],
-	"minimumCoreVersion": "9",
-	"minimumSystemVersion": "1.2.0",
-	"compatibleCoreVersion": "10.0",
-	"bugs": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/issues",
-	"changelog": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases",
-	"download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.2.0/module.zip",
-	"manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.2.0/module.json",
-	"readme": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/blob/main/README.md",
-	"url": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e",
-	"allowBugReporter": true,
-	"manifestPlusVersion": "1.0.0"
+  "id": "fancy-ui-5e",
+  "title": "Fancy UI 5e",
+  "description": "A polished UI for D&D 5e with party and character panels.",
+  "version": "1.2.0",
+  "authors": [
+    {
+      "name": "Miguel Molina",
+      "url": "https://github.com/erizocosmico"
+    }
+  ],
+  "esmodules": ["./scripts/main.js"],
+  "styles": ["./styles/ui.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "languages/es.json"
+    }
+  ],
+  "compatibility": {
+    "minimum": "9",
+    "verified": "12.237",
+    "maximum": "12"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+        "compatibility": {
+          "minimum": "3.0.0",
+          "verified": "3.2.0"
+        }
+      }
+    ]
+  },
+  "bugs": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/issues",
+  "changelog": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases",
+  "download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.2.0/module.zip",
+  "manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.2.0/module.json",
+  "readme": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/blob/main/README.md",
+  "url": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e",
+  "allowBugReporter": true,
+  "manifestPlusVersion": "1.0.0"
 }

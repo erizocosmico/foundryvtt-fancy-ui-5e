@@ -25,11 +25,3 @@ https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.2.0/
 - Foundry logo is hidden (in the future it will be replaceable with your own).
 
 This set of features is meant to remove the things that take space in the screen and are not needed while providing quality of life improvements for using the characters as well as a nicer UI. This is how I like my setup, but not necessarily how everyone will like to play with FoundryVTT.
-
-### Requirements
-
-- [BetterRolls5e](https://github.com/RedReign/FoundryVTT-BetterRolls5e) (for v9)
-- [ReadySetRoll](https://github.com/MangoFVTT/fvtt-ready-set-roll-5e) (for v10)
-- [character-actions-list-5e](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions)
-- [mybeyond-theme](https://fvtt-modules.eschmann.online/)
-- dnd5e system.

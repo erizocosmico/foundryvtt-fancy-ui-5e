@@ -19,12 +19,12 @@ export function rollAction(e) {
   const actor = game.actors.get(this.dataset.characterId);
   if (!actor) return;
 
-  if (window.rsr5e) {
+  if (window.BetterRolls) {
+    actor.sheet._onItemRoll(e);
+  } else {
     const item = actor.items.get(this.dataset.itemId);
     if (!item) return;
     item.use();
-  } else if (window.BetterRolls) {
-    actor.sheet._onItemRoll(e);
   }
 }
 
@@ -32,10 +32,10 @@ export function rollAbility(_) {
   const actor = game.actors.get(this.dataset.characterId);
   if (!actor) return;
 
-  if (window.rsr5e) {
-    actor.rollAbilityTest(this.dataset.ability, {});
-  } else if (window.BetterRolls) {
+  if (window.BetterRolls) {
     BetterRolls.rollCheck(actor, this.dataset.ability, {});
+  } else {
+    actor.rollAbilityTest(this.dataset.ability, {});
   }
 }
 
@@ -43,10 +43,10 @@ export function rollSkill(_) {
   const actor = game.actors.get(this.dataset.characterId);
   if (!actor) return;
 
-  if (window.rsr5e) {
-    actor.rollSkill(this.dataset.skill, {});
-  } else if (window.BetterRolls) {
+  if (window.BetterRolls) {
     BetterRolls.rollSkill(actor, this.dataset.skill, {});
+  } else {
+    actor.rollSkill(this.dataset.skill, {});
   }
 }
 
@@ -57,9 +57,9 @@ export function rollSave(e) {
   const actor = game.actors.get(this.parentNode.dataset.characterId);
   if (!actor) return;
 
-  if (window.rsr5e) {
-    actor.rollAbilitySave(this.parentNode.dataset.ability, {});
-  } else if (window.BetterRolls) {
+  if (window.BetterRolls) {
     BetterRolls.rollSave(actor, this.parentNode.dataset.ability, {});
+  } else {
+    actor.rollAbilitySave(this.parentNode.dataset.ability, {});
   }
 }
