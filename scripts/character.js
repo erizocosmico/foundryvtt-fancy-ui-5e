@@ -52,7 +52,7 @@ export function characterData(c) {
       percent: hpPercent,
       status: hpStatus(hpPercent),
     },
-    ini: attributes.init.mod,
+    ini: attributes.init.mod || 0,
     speed: attributes.movement.walk,
     actions,
     abilities,
@@ -75,7 +75,6 @@ function getActivationType(activationType) {
 function getActions(items) {
   return items.filter(isItemInActionList).reduce(
     (acc, item) => {
-      console.log(item);
       var _a;
       try {
         const activationType = getActivationType(
@@ -98,15 +97,6 @@ function getActions(items) {
 }
 
 function isItemInActionList(item) {
-  // check the old flags
-  const isFavourite = item.flags?.favtab?.isFavourite; // favourite items tab
-  const isFavorite = item.flags?.favtab?.isFavorite; // tidy 5e sheet
-
-  if (isFavourite || isFavorite) {
-    return true;
-  }
-
-  // perform normal filtering logic
   switch (item.type) {
     case 'weapon': {
       return item.system.equipped;
@@ -119,7 +109,7 @@ function isItemInActionList(item) {
       const notPrepared =
         item.system.preparation?.mode === 'prepared' && !item.system.preparation?.prepared;
       const isCantrip = item.system.level === 0;
-      if (!isCantrip && (limitToCantrips || notPrepared)) {
+      if (!isCantrip && notPrepared) {
         return false;
       }
       const isReaction = item.system.activation?.type === 'reaction';

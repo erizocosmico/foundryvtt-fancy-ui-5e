@@ -302,6 +302,7 @@ section.chat-sidebar .jump-to-bottom > a {
   flex-basis: auto !important;
   height: auto;
   pointer-events: all !important;
+  padding-top: 15px;
 }
 
 #controls:hover {
