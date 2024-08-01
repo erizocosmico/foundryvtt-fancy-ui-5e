@@ -1,26 +1,33 @@
 {
   "id": "fancy-ui-5e",
   "title": "Fancy UI 5e",
-  "description": "A polished UI for D&D 5e with party and character panels.",
-  "version": "1.4.1",
+  "description": "A polished UI for D&amp;D 5e with party and character panels.",
+  "version": "1.4.2",
   "authors": [
     {
       "name": "Miguel Molina",
-      "url": "https://github.com/erizocosmico"
+      "url": "https://github.com/erizocosmico",
+      "flags": {}
     }
   ],
-  "esmodules": ["./scripts/main.js"],
-  "styles": ["./styles/ui.css"],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/ui.css"
+  ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "languages/en.json"
+      "path": "languages/en.json",
+      "flags": {}
     },
     {
       "lang": "es",
       "name": "Español",
-      "path": "languages/es.json"
+      "path": "languages/es.json",
+      "flags": {}
     }
   ],
   "compatibility": {
@@ -43,10 +50,8 @@
   },
   "bugs": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/issues",
   "changelog": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases",
-  "download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.4.1/module.zip",
-  "manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.4.1/module.json",
+  "download": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/download/v1.4.2/module.zip",
+  "manifest": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/releases/latest/download/module.json",
   "readme": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e/blob/main/README.md",
-  "url": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e",
-  "allowBugReporter": true,
-  "manifestPlusVersion": "1.0.0"
+  "url": "https://github.com/erizocosmico/foundryvtt-fancy-ui-5e"
 }

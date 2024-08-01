@@ -52,6 +52,20 @@ textarea:focus {
   height: 90%;
 }
 
+.window-app:not(.window-popout) .window-content {
+	background: url("/systems/dnd5e/ui/texture1.webp") no-repeat top center / auto 770px, var(--dnd5e-color-parchment) url("/systems/dnd5e/ui/texture2.webp") no-repeat bottom center / auto 704px
+}
+
+.window-app.journal-sheet .window-content,
+.window-app.sidebar-popout .window-content,
+.window-app.window-popout .window-content {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.window-app.dnd5e2 .window-content {
+	background: transparent;
+}
+
 #navigation {
   display: none;
   width: 0;
@@ -61,22 +75,40 @@ textarea:focus {
   opacity: 0;
 }
 
+#ui-left {
+	justify-content: initial !important;
+}
+
 /**
  * Sidebar
  */
 
-#sidebar {
+ #sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  overflow: visible;
+  width: 360px;
+  padding: 15px 15px;
+  background: none;
+  box-shadow: none;
   border: none;
-  height: 100%;
+  outline: none;
+}
+
+#sidebar::before {
+  position: absolute;
+  z-index: -1;
+  content: " ";
+  height: calc(100% - 0px);
+  width: 100%;
+  left: 0;
   top: 0;
-  right: 0;
-  margin: 0 !important;
-  border-radius: 0;
-  min-width: 340px;
-  box-shadow: 0 -50px 50px rgba(0, 0, 0, 0.9);
-  background: rgba(0, 0, 0, 0.7);
-  border-left: 1px solid var(--gold-dark);
-  outline: 1px solid black;
+  background: url(../images/backgrounds/chat.webp);
+  background-size: 100% 100%;
 }
 
 #sidebar #sidebar-tabs {
@@ -106,10 +138,6 @@ section.chat-sidebar .jump-to-bottom > a {
 
 #sidebar #sidebar-tabs a.collapse {
   display: none;
-}
-
-.window-app .window-content {
-  background: white;
 }
 
 .window-app.image-popout .window-content {
@@ -234,6 +262,15 @@ section.chat-sidebar .jump-to-bottom > a {
   background: transparent !important;
 }
 
+:is(.chat-popout, #chat-log) .message::before {
+  background: transparent url("/systems/dnd5e/ui/texture-gray1.webp") no-repeat top left !important;
+  border-radius: 0px !important;
+  filter: hue-rotate(-348deg) saturate(4);
+  left: -4px;
+  right: -4px;
+  top: -4px;
+}
+
 #sidebar #chat .message + .message {
   margin-top: 5px;
 }
@@ -288,7 +325,9 @@ section.chat-sidebar .jump-to-bottom > a {
 }
 
 #players {
-  opacity: 0.2;
+  opacity: .2;
+	position: fixed;
+	bottom: .5rem;
 }
 
 #players:hover {
@@ -296,30 +335,45 @@ section.chat-sidebar .jump-to-bottom > a {
 }
 
 #controls {
-  opacity: 0.5;
+  position: fixed;
+  right: 340px;
+  opacity: 1;
   flex-grow: 0 !important;
   flex-shrink: 1 !important;
   flex-basis: auto !important;
   height: auto;
   pointer-events: all !important;
   padding-top: 15px;
+  flex-direction: row-reverse;
 }
 
 #controls:hover {
   opacity: 1;
 }
 
+#controls ol.control-tools > li.scene-control,
+#controls ol.control-tools > li.control-tool {
+	border-radius: 50%;
+	font-size: 1rem;
+	opacity: .5;
+	transition: opacity 250ms ease-in-out;
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
 #controls ol.control-tools > li.scene-control:hover,
 #controls ol.control-tools > li.scene-control.active,
 #controls ol.control-tools > li.control-tool:hover,
 #controls ol.control-tools > li.control-tool.active {
-  border: 1px solid var(--gold);
-  box-shadow: 0 0 10px var(--gold-toasted);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, .3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  opacity: 1;
 }
 
 #controls ol.control-tools > li.scene-control:not(.active),
 #controls ol .control-tool {
-  display: none !important;
+  display: inline-block !important;
 }
 
 #controls:hover ol.main-controls .scene-control:not(.active),
