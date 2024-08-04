@@ -52,7 +52,7 @@ textarea:focus {
   height: 90%;
 }
 
-.window-app:not(.window-popout) .window-content {
+.window-app:not(.dnd5e2) .window-content {
 	background: url("/systems/dnd5e/ui/texture1.webp") no-repeat top center / auto 770px, var(--dnd5e-color-parchment) url("/systems/dnd5e/ui/texture2.webp") no-repeat bottom center / auto 704px
 }
 
@@ -60,10 +60,6 @@ textarea:focus {
 .window-app.sidebar-popout .window-content,
 .window-app.window-popout .window-content {
 	background: rgba(0, 0, 0, 0.5);
-}
-
-.window-app.dnd5e2 .window-content {
-	background: transparent;
 }
 
 #navigation {
