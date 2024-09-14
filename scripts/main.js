@@ -5,12 +5,10 @@ import {
   characterData,
 } from "./character.js";
 import * as actions from "./actions.js";
+import { isGm } from "./utils.js";
 
 Hooks.on("renderApplication", async function () {
-  if (!isGm()) {
-    await renderCharacter();
-  }
-
+  await renderCharacter();
   await renderParty();
 
   if (isGm()) {
@@ -21,7 +19,7 @@ Hooks.on("renderApplication", async function () {
 });
 
 Hooks.on("updateActor", async function (actor) {
-  if (!isGm() && actor.id === getCharacter()?.id) {
+  if (actor.id === getCharacter()?.id) {
     await renderCharacter();
   }
 
@@ -29,18 +27,25 @@ Hooks.on("updateActor", async function (actor) {
 });
 
 Hooks.on("updateOwnedItem", async function (actor, _, diff) {
-  if (isGm() || actor.id !== getCharacter()?.id) {
+  if (actor.id !== getCharacter()?.id) {
     return;
   }
 
   // Wait a little bit so the item is updated and can be rendered
   // correctly in the actions list.
   await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  if (diff.flags && diff.flags["character-actions-list-5e"]) {
-    await renderCharacter();
-  }
+  await renderCharacter();
 });
+
+Hooks.on('controlToken', async function () {
+  if (!isGm()) return;
+  await renderCharacter();
+});
+
+Hooks.on('deleteToken', async function () {
+  if (!isGm()) return;
+  await renderCharacter();
+})
 
 Hooks.once("init", async () => {
   $("body.game").append('<div id="player-character"></div>');
@@ -134,16 +139,16 @@ function setupHealthPointsTracker(element) {
   });
 }
 
-function isGm() {
-  return game.users.get(game.userId).isGM;
-}
-
 async function renderCharacter() {
   const elem = document.getElementById("player-character");
   if (!elem) return;
 
   const character = getCharacter();
-  if (!character) return;
+  if (!character) {
+    elem.parentNode.removeChild(elem);
+    $("body.game").append('<div id="player-character"></div>');
+    return;
+  }
 
   const data = characterData(character);
   if (!data) return;

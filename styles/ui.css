@@ -39,27 +39,44 @@ textarea:focus {
   background: none;
 }
 
-.window-app .window-header a:not(.close) {
-  border-bottom: 1px solid #7778;
-  border-radius: 5px;
-  height: 90%;
-  margin: 0 4px;
+.window-app:not(.dnd5e2) .window-header a {
+  margin-top: 2px !important;
 }
 
-.window-app .window-header a.close {
-  border-bottom: 1px solid #c008;
+.window-app:not(.dnd5e2) .window-header a:not(.close) {
+  border-bottom: 1px solid #7778 !important;
   border-radius: 5px;
   height: 90%;
+  line-height: 25px !important;
+}
+
+.window-app:not(.dnd5e2) .window-header a + a {
+  margin-left: 4px !important;
+}
+
+.window-app:not(.dnd5e2) .window-header a.close {
+  border-bottom: 1px solid #c008 !important;
+  margin-right: -4px !important;
+  border-radius: 5px;
+  height: 90% !important;
+}
+
+.window-app .window-header .pop__btn-open {
+  display: none !important;
 }
 
 .window-app:not(.dnd5e2) .window-content {
 	background: url("/systems/dnd5e/ui/texture1.webp") no-repeat top center / auto 770px, var(--dnd5e-color-parchment) url("/systems/dnd5e/ui/texture2.webp") no-repeat bottom center / auto 704px
 }
 
-.window-app.journal-sheet .window-content,
+.window-app.image-popout .window-content,
 .window-app.sidebar-popout .window-content,
 .window-app.window-popout .window-content {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.window-app.dnd5e2.create-document .window-content {
+  background: transparent;
 }
 
 #navigation {
