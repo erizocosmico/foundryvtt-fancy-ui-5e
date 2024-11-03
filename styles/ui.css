@@ -209,6 +209,13 @@ section.chat-sidebar .jump-to-bottom > a {
   border-radius: 0;
 }
 
+#sidebar button:hover,
+.dialog-buttons button:hover {
+  color: white !important;
+  box-shadow: 0 0 0 1px var(--gold) inset, 0 0 0 3px black inset !important;
+  border: 1px solid black !important;
+}
+
 .sidebar-tab .action-buttons button,
 .dir__btn-header {
   height: 30px !important;
@@ -491,6 +498,7 @@ label.btn--active:hover {
 
 #player-character .character-picture img {
   background-size: cover;
+  object-fit: cover;
   width: 90px;
   height: 90px;
   margin-top: 4px;
@@ -954,6 +962,7 @@ label.btn--active:hover {
 
 #party .character-picture img {
   background-size: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 50%;
