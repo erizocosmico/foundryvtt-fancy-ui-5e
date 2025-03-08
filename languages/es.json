@@ -13,5 +13,7 @@
 	"FANCYUI5E.crew_actions": "Acciones de tripulación",
 	"FANCYUI5E.other_actions": "Otras acciones",
 	"FANCYUI5E.config_party_only_active": "Mostrar solo personajes activos",
-	"FANCYUI5E.config_party_only_active_help": "Mostrar solo personajes de jugadores en línea en el panel izquierdo"
+	"FANCYUI5E.config_party_only_active_help": "Mostrar solo personajes de jugadores en línea en el panel izquierdo",
+	"FANCYUI5E.hide": "Ocultar",
+	"FANCYUI5E.show": "Mostrar"
 }

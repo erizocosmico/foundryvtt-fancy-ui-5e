@@ -1039,3 +1039,17 @@ label.btn--active:hover {
 #player-character {
   z-index: 16;
 }
+
+.party-collapse {
+  padding: 0 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  text-shadow: 0 0 3px black, 0 0 5px black, 0 0 7px black, 0 0 15px black;
+}
+
+.party-collapse:hover {
+  opacity: 1;
+}

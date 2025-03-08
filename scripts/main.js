@@ -97,6 +97,10 @@ function toggleStats(e) {
 function activatePartyListeners() {
   $(document).on("dblclick", "#party .character-picture", actions.openSheet);
   $(document).on("click", "#party .character-picture", actions.selectToken);
+  $(document).on('click', '#party .party-collapse', () => {
+    collapsed = !collapsed;
+    renderParty();
+  });
   setupHealthPointsTracker("#party .current-health");
 }
 
@@ -161,6 +165,8 @@ async function renderCharacter() {
   elem.innerHTML = tpl;
 }
 
+let collapsed = false;
+
 async function renderParty() {
   const elem = document.getElementById("party");
   if (!elem) return;
@@ -169,6 +175,7 @@ async function renderParty() {
 
   const tpl = await renderTemplate("modules/fancy-ui-5e/templates/party.hbs", {
     characters,
+    collapsed
   });
 
   elem.innerHTML = tpl;

@@ -1,3 +1,4 @@
+{{#if (not collapsed)}}
 {{#each characters as |c|}}
 <div class="party-character">
     <div class="character-picture" data-character="{{c.id}}">
@@ -24,3 +25,15 @@
     </div>
 </div>
 {{/each}}
+{{/if}}
+{{#if (gt characters.length 0)}}
+<div class="party-collapse">
+    {{#if collapsed}}
+    <i class="fas fa-circle-chevron-right"></i>
+    <span>{{localize "FANCYUI5E.show"}}</span>
+    {{else}}
+    <i class="fas fa-circle-chevron-left"></i>
+    <span>{{localize "FANCYUI5E.hide"}}</span>
+    {{/if}}
+</div>
+{{/if}}
