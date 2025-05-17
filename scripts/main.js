@@ -45,7 +45,14 @@ Hooks.on('controlToken', async function () {
 Hooks.on('deleteToken', async function () {
   if (!isGm()) return;
   await renderCharacter();
-})
+});
+
+Hooks.on('updateSetting', async (setting) => {
+  if (setting.key.startsWith('fancy-ui-5e')) {
+    await renderCharacter();
+    await renderParty();
+  }
+});
 
 Hooks.once("init", async () => {
   $("body.game").append('<div id="player-character"></div>');
@@ -64,6 +71,15 @@ Hooks.once('ready', () => {
   game.settings.register("fancy-ui-5e", "party-only-active", {
     name: game.i18n.localize("FANCYUI5E.config_party_only_active"),
     hint: game.i18n.localize("FANCYUI5E.config_party_only_active_help"),
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
+
+  game.settings.register("fancy-ui-5e", "hide-party-panel", {
+    name: game.i18n.localize("FANCYUI5E.hide_party_panel"),
+    hint: game.i18n.localize("FANCYUI5E.hide_party_panel_help"),
     scope: "world",
     config: true,
     type: Boolean,
@@ -168,6 +184,7 @@ async function renderCharacter() {
 let collapsed = false;
 
 async function renderParty() {
+  if (game.settings.get('fancy-ui-5e', 'hide-party-panel')) return;
   const elem = document.getElementById("party");
   if (!elem) return;
 

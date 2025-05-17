@@ -15,5 +15,7 @@
 	"FANCYUI5E.config_party_only_active": "Show only active characters",
 	"FANCYUI5E.config_party_only_active_help": "Show only characters of online players in the left panel",
 	"FANCYUI5E.hide": "Hide",
-	"FANCYUI5E.show": "Show"
+	"FANCYUI5E.show": "Show",
+	"FANCYUI5E.hide_party_panel": "Hide party panel",
+	"FANCYUI5E.hide_party_panel_help": "When this is active, it will hide the left part panel."
 }
