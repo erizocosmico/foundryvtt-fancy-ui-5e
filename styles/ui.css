@@ -35,291 +35,72 @@ textarea:focus {
   border-color: var(--gold-toasted);
 }
 
-.ve-window {
-  background: none;
-}
-
-.window-app:not(.dnd5e2) .window-header a {
-  margin-top: 2px !important;
-}
-
-.window-app:not(.dnd5e2) .window-header a:not(.close) {
-  border-bottom: 1px solid #7778 !important;
-  border-radius: 5px;
-  height: 90%;
-  line-height: 25px !important;
-}
-
-.window-app:not(.dnd5e2) .window-header a + a {
-  margin-left: 4px !important;
-}
-
-.window-app:not(.dnd5e2) .window-header a.close {
-  border-bottom: 1px solid #c008 !important;
-  margin-right: -4px !important;
-  border-radius: 5px;
-  height: 90% !important;
-}
-
-.window-app .window-header .pop__btn-open {
-  display: none !important;
-}
-
-.window-app:not(.dnd5e2) .window-content {
-	background: url("/systems/dnd5e/ui/texture1.webp") no-repeat top center / auto 770px, var(--dnd5e-color-parchment) url("/systems/dnd5e/ui/texture2.webp") no-repeat bottom center / auto 704px
-}
-
-.window-app.image-popout .window-content,
-.window-app.sidebar-popout .window-content,
-.window-app.window-popout .window-content {
-	background: rgba(0, 0, 0, 0.5) !important;
-}
-
-.window-app.dnd5e2.create-document .window-content {
-  background: transparent;
-}
-
-#navigation {
-  display: none;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-}
-
-#ui-left {
-	justify-content: initial !important;
-}
-
 /**
- * Sidebar
+ * Controls
  */
 
- #sidebar {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  position: relative;
-  right: 0px;
-  top: 0px;
-  overflow: visible;
-  width: 360px;
-  padding: 15px 15px;
-  background: none;
-  box-shadow: none;
-  border: none;
-  outline: none;
+#scene-controls li:has(button:not([aria-pressed="true"])) {
+	opacity: 0;
+	display: none;
 }
 
-#sidebar::before {
+#scene-controls:hover li:has(button:not([aria-pressed="true"])) {
+	opacity: 1;
+	display: list-item;
+}
+
+#ui-left-column-1,
+#ui-left-column-1:hover #scene-controls {
+	pointer-events: all;
+}
+
+#ui-left #ui-left-column-1 {
+	height: auto !important;
+}
+
+#ui-left #players {
   position: absolute;
-  z-index: -1;
-  content: " ";
-  height: calc(100% - 0px);
-  width: 100%;
-  left: 0;
-  top: 0;
-  background: url(../images/backgrounds/chat.webp);
-  background-size: 100% 100%;
+  bottom: 15px;
 }
 
-#sidebar #sidebar-tabs {
-  padding-left: 5px;
-  border-bottom: 1px solid black;
-  margin-bottom: 0;
-  padding-bottom: 5px;
-  box-shadow: 0 1px 0 black, 0 -1px 0 var(--gold-dark) inset;
+button.ui-control {
+	border-radius: 50%;
+	font-size: 14px;
 }
 
-#sidebar #chat-log {
-  padding-top: 5px;
-  padding-right: 5px;
-}
-
-#sidebar > section {
-  padding-left: 5px;
-}
-
-section.chat-sidebar .jump-to-bottom > a {
-  width: 335px;
-}
-
-#sidebar #sidebar-tabs {
-  justify-content: center;
-}
-
-#sidebar #sidebar-tabs a.collapse {
-  display: none;
-}
-
-.window-app.image-popout .window-content {
-  background: transparent;
-}
-
-.app.sidebar-popout .window-content {
-  background: none;
-}
-
-#sidebar-tabs {
-  padding-top: 0.5em;
-}
-
-#sidebar-tabs > .item {
-  display: flex;
-  height: 30px;
-  min-width: 30px;
-  align-items: center;
-  justify-content: center;
-}
-
-#sidebar-tabs > .item.active {
-  box-shadow: none;
-  text-shadow: none;
-  background: transparent;
-  border: 1px solid black;
-  box-shadow: 0 0 0 2px var(--gold) inset;
-  border-radius: 50%;
-}
-
-#sidebar-tabs > .item.active::after {
-  position: absolute;
-  content: ' ';
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.1) 50%,
-    rgba(0, 0, 0, 0.3) 85%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
-}
-
-#sidebar button,
-.dialog-buttons button {
-  box-shadow: 0 0 0 1px var(--gold) inset, 0 0 0 3px black inset;
-  border: 1px solid black !important;
-  background: black !important;
-  color: white;
-  position: relative;
-  border-radius: 0;
-}
-
-#sidebar button:hover,
-.dialog-buttons button:hover {
-  color: white !important;
-  box-shadow: 0 0 0 1px var(--gold) inset, 0 0 0 3px black inset !important;
+button.ui-control[aria-pressed="true"] {
+	color: white !important;
+  box-shadow: 0 0 0 2px var(--gold) inset, 0 0 0 3px black inset !important;
   border: 1px solid black !important;
 }
 
-.sidebar-tab .action-buttons button,
-.dir__btn-header {
-  height: 30px !important;
+.chat-controls .split-button .ui-control[aria-pressed=true] + .ui-control,
+#roll-privacy.split-button .ui-control[aria-pressed=true] + .ui-control {
+	border: none !important;
 }
 
-#sidebar button::after,
-.dialog-buttons button::after {
-  position: absolute;
-  content: ' ';
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.1) 50%,
-    rgba(0, 0, 0, 0.3) 85%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
-}
-
-#sidebar-tabs {
-  border-bottom-color: transparent;
-  box-shadow: none;
+.chat-controls .split-button,
+#roll-privacy.split-button {
+	gap: 5px;
 }
 
 /**
  * Chat
  */
 
-#chat-form {
-  height: 50px;
-  flex: 0 0 50px;
+.chat-log .chat-message {
+  padding: 10px;
+  border-radius: 4px;
 }
 
-#chat-form textarea {
-  border: 1px solid var(--gold-toasted);
-  background: rgba(255, 255, 255, 0.2);
-  height: 50px;
-  color: white;
+.chat-log .chat-message.chatmsg__trim-top {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
-#sidebar #chat .message {
-  background: #ebdec2;
-  color: #352011;
-  -webkit-box-shadow: 0 0 16px 6px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 16px 6px rgba(0, 0, 0, 0.5);
-  border: 12px solid #ebdec2;
-  border-image-outset: 0;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
-  -o-border-image: url(../images/backgrounds/paper.png) 12 repeat;
-  border-image: url(../images/backgrounds/paper.png) 12 repeat;
-  border-image-outset: 0;
-  border-image-outset: 3px;
-  padding: 5px;
-  margin: 3px 3px 12px 3px;
-}
-
-.message::before {
-  background: transparent !important;
-}
-
-:is(.chat-popout, #chat-log) .message::before {
-  background: transparent url("/systems/dnd5e/ui/texture-gray1.webp") no-repeat top left !important;
-  border-radius: 0px !important;
-  filter: hue-rotate(-348deg) saturate(4);
-  left: -4px;
-  right: -4px;
-  top: -4px;
-}
-
-#sidebar #chat .message + .message {
-  margin-top: 5px;
-}
-
-#sidebar #chat .message .message-sender {
-  font-weight: bold;
-}
-
-/**
- * Chat messages dnd5e
- */
-
-.dnd5e.chat-card .card-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  border-top: none;
-  padding: 5px0 0;
-  margin-bottom: 5px;
-}
-
-.dnd5e.chat-card .card-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.dnd5e.red-full.chat-card footer.card-footer {
-  margin-top: 5px;
-}
-
-.red-dual .dice-row .dice-row-item + .dice-row-item {
-  margin-left: 5px;
+.chat-log .chat-message.chatmsg__trim-bottom {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 /*
@@ -335,82 +116,6 @@ section.chat-sidebar .jump-to-bottom > a {
   opacity: 0;
 }
 
-#players.hidden {
-  display: none !important;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-}
-
-#players {
-  opacity: .2;
-	position: fixed;
-	bottom: .5rem;
-}
-
-#players:hover {
-  opacity: 1;
-}
-
-#controls {
-  position: fixed;
-  right: 340px;
-  opacity: 1;
-  flex-grow: 0 !important;
-  flex-shrink: 1 !important;
-  flex-basis: auto !important;
-  height: auto;
-  pointer-events: all !important;
-  padding-top: 15px;
-  flex-direction: row-reverse;
-}
-
-#controls:hover {
-  opacity: 1;
-}
-
-#controls ol.control-tools > li.scene-control,
-#controls ol.control-tools > li.control-tool {
-	border-radius: 50%;
-	font-size: 1rem;
-	opacity: .5;
-	transition: opacity 250ms ease-in-out;
-	border: 1px solid rgba(0,0,0,0.5);
-}
-
-#controls ol.control-tools > li.scene-control:hover,
-#controls ol.control-tools > li.scene-control.active,
-#controls ol.control-tools > li.control-tool:hover,
-#controls ol.control-tools > li.control-tool.active {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, .3);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  opacity: 1;
-}
-
-#controls ol.control-tools > li.scene-control:not(.active),
-#controls ol .control-tool {
-  display: inline-block !important;
-}
-
-#controls:hover ol.main-controls .scene-control:not(.active),
-#controls:hover ol.sub-controls .control-tool {
-  display: inline-block !important;
-}
-
-#pause {
-  bottom: calc(50% - 50px);
-}
-
-#logo {
-  display: none !important;
-  height: 0;
-  display: 0;
-}
-
 #combat #combat-round .encounters h3 {
   font-size: 14px;
 }
@@ -418,13 +123,6 @@ section.chat-sidebar .jump-to-bottom > a {
 /**
  * Journal
  */
-
-.journal-sheet:not(.image-popout) input {
-  background: white;
-  border: none;
-  border-bottom: 1px solid var(--gold);
-  border-radius: 0;
-}
 
 .journal-sheet:not(.image-popout) select {
   display: none;
@@ -437,36 +135,6 @@ section.chat-sidebar .jump-to-bottom > a {
 .editor-preview {
   font-size: 1.3em;
   font-family: 'Noto Serif', serif;
-}
-
-/**
- * Plutonium
- */
-
-.monsterblock .window-content,
-.ve-window {
-  background: white !important;
-}
-
-.ui-modal__inner {
-  background: white;
-}
-
-.stripe-odd:nth-child(odd),
-.stripe-even:nth-child(even),
-.stripe-odd-table > tbody > tr:nth-child(odd),
-.stripe-even-table > tbody > tr:nth-child(even) {
-  background: rgba(0, 0, 0, 0.05) !important;
-}
-
-.btn.active:hover,
-.btn--active:hover,
-a.btn.active:hover,
-a.btn--active:hover,
-label.btn.active:hover,
-label.btn--active:hover {
-  background: var(--gold-dark) !important;
-  box-shadow: none;
 }
 
 /**
@@ -545,12 +213,12 @@ label.btn--active:hover {
 
 #player-character .character-level-badge::before {
   content: ' ';
-  height: 18.5px;
-  width: 18.5px;
+  height: 19px;
+  width: 19px;
   background: black;
   position: absolute;
-  bottom: 2.75px;
-  left: 2.75px;
+  bottom: 3px;
+  left: 3px;
 }
 
 #player-character .character-level span {

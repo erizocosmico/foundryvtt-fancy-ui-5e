@@ -7,15 +7,10 @@ import {
 import * as actions from "./actions.js";
 import { isGm } from "./utils.js";
 
-Hooks.on("renderApplication", async function () {
+
+Hooks.on("renderApplicationV2", async function () {
   await renderCharacter();
   await renderParty();
-
-  if (isGm()) {
-    $("#players").removeClass("hidden");
-  } else {
-    $("#players").addClass("hidden");
-  }
 });
 
 Hooks.on("updateActor", async function (actor) {

@@ -35,7 +35,11 @@ export function rollAbility(_) {
   if (window.BetterRolls) {
     BetterRolls.rollCheck(actor, this.dataset.ability, {});
   } else {
-    actor.rollAbilityTest(this.dataset.ability, {});
+    if (actor.rollAbilityCheck) {
+      actor.rollAbilityCheck({ability: this.dataset.ability});
+    } else {
+      actor.rollAbilityTest(this.dataset.ability, {});
+    }
   }
 }
 
@@ -46,7 +50,12 @@ export function rollSkill(_) {
   if (window.BetterRolls) {
     BetterRolls.rollSkill(actor, this.dataset.skill, {});
   } else {
-    actor.rollSkill(this.dataset.skill, {});
+    const version = Number(dnd5e.version.split('.')[0])
+    if (version > 4) {
+      actor.rollSkill({skill: this.dataset.skill});
+    } else {
+      actor.rollSkill(this.dataset.skill, {});
+    }
   }
 }
 
@@ -60,6 +69,10 @@ export function rollSave(e) {
   if (window.BetterRolls) {
     BetterRolls.rollSave(actor, this.parentNode.dataset.ability, {});
   } else {
-    actor.rollAbilitySave(this.parentNode.dataset.ability, {});
+    if (actor.rollSavingThrow) {
+      actor.rollAbilitySave(this.parentNode.dataset.ability, {});
+    } else {
+      actor.rollSavingThrow({ability: this.dataset.ability});
+    }
   }
 }
